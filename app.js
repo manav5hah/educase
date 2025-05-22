@@ -5,16 +5,16 @@ const bodyparser = require('body-parser')
 
 const app = express()
 
-app.listen(process.env.MYSQLPORT, () => console.log('Server running on 3000'))
+app.listen(process.env.PORT, () => console.log('Server running on 3000'))
 
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
 const conn = mysql.createConnection({
-    host: process.env.MYSQLHOST,
-    user: process.env.MYSQLUSER,
-    password: process.env.MYSQL_ROOT_PASSWORD,
-    database: process.env.MYSQL_DATABASE
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
 conn.connect(err => {
