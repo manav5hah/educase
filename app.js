@@ -5,7 +5,7 @@ const bodyparser = require('body-parser')
 
 const app = express()
 
-app.listen(process.env.PORT, () => console.log('Server running on 3000'))
+app.listen(process.env.DB_PORT, () => console.log('Server running on 3000'))
 
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
