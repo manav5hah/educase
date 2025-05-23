@@ -44,7 +44,7 @@ app.post('/addSchool', (req, res) => {
     }
     catch (err) {
         console.log(err)
-        res.send({ status: 500, error: err })
+        res.send({ status: 500, error: err?.message })
     }
 })
 
